@@ -1,4 +1,4 @@
-package middle;
+package data;
 
 public class Mentor {
     private int id;

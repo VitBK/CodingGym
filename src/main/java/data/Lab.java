@@ -1,4 +1,4 @@
-package middle;
+package data;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -13,14 +13,14 @@ public class Lab {
     List<Mentor> lamaMentors = new ArrayList<>();
     List<Project> projects = new ArrayList<>();
 
-    public void createStudents(){
+    private void createStudents(){
         Student student1 = new Student("Hanna", LocalDate.of(2021, 03, 23), "edp");
         Student student2 = new Student("Anton", LocalDate.of(2021, 03, 23), "edp");
-        Student student3 = new Student("Rustam", LocalDate.of(2021, 06, 4), "edp");
-        Student student4 = new Student("Vitalii", LocalDate.of(2021, 06, 01), "edp");
+        Student student3 = new Student("Oleg", LocalDate.of(2021, 06, 4), "edp");
+        Student student4 = new Student("Kristina", LocalDate.of(2021, 06, 01), "edp");
         Student student5 = new Student("Marina", LocalDate.of(2021, 07, 01), "edp");
         Student student6 = new Student("Elena", LocalDate.of(2021, 07, 5), "edp");
-        Student student7 = new Student("Kseniia", LocalDate.of(2021, 02, 7), "edp");
+        Student student7 = new Student("Anatolii", LocalDate.of(2021, 02, 7), "edp");
         Student student8 = new Student("Olga", LocalDate.of(2020, 12, 23), "lama");
         Student student9 = new Student("Ilia", LocalDate.of(2020, 12, 23), "lama");
         Student student10 = new Student("Aleksandr", LocalDate.of(2021, 04, 01), "lama");
@@ -47,7 +47,7 @@ public class Lab {
         beaconStudents.add(student15);
     }
 
-    public void createMentors(){
+    private void createMentors(){
         Mentor mentor1 = new Mentor(1, "Artem", "backend");
         Mentor mentor2 = new Mentor(2, "Sasha", "backend");
         Mentor mentor3 = new Mentor(3, "Pavel", "frontend");
@@ -67,7 +67,7 @@ public class Lab {
         lamaMentors.add(mentor8);
     }
 
-    public void createProjects(){
+    private void createProjects(){
         Project edp = new Project(edpMentors, edpStudents, "edp");
         Project beacons = new Project(beaconMentors, beaconStudents, "beacons");
         Project lama = new Project(lamaMentors, lamaStudents, "lama");
@@ -81,30 +81,6 @@ public class Lab {
         createStudents();
         createMentors();
         createProjects();
-    }
-
-    public List<Student> getEdpStudents() {
-        return edpStudents;
-    }
-
-    public List<Student> getLamaStudents() {
-        return lamaStudents;
-    }
-
-    public List<Student> getBeaconStudents() {
-        return beaconStudents;
-    }
-
-    public List<Mentor> getEdpMentors() {
-        return edpMentors;
-    }
-
-    public List<Mentor> getBeaconMentors() {
-        return beaconMentors;
-    }
-
-    public List<Mentor> getLamaMentors() {
-        return lamaMentors;
     }
 
     public List<Project> getProjects() {

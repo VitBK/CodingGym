@@ -1,6 +1,7 @@
-package middle;
+package data;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Student {
     private String name;
@@ -32,5 +33,18 @@ public class Student {
                 ", dateOfJoinProject=" + dateOfJoinProject +
                 ", nameOfProject='" + nameOfProject + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(name, student.name) && Objects.equals(dateOfJoinProject, student.dateOfJoinProject) && Objects.equals(nameOfProject, student.nameOfProject);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, dateOfJoinProject, nameOfProject);
     }
 }
