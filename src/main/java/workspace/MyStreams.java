@@ -1,7 +1,9 @@
-import data.Lab;
-import data.Mentor;
-import data.Project;
-import data.Student;
+package workspace;
+
+import data.lab.Lab;
+import data.lab.Mentor;
+import data.lab.Project;
+import data.lab.Student;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -46,7 +48,7 @@ public class MyStreams {
     }
 
     public static void ex6(Lab lab) {
-        lab.getProjects().stream()
+        var result = lab.getProjects().stream()
                 .max(Comparator.comparing(x -> x.getStudents().size()))
                 .get();
     }

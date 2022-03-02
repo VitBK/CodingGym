@@ -1,6 +1,8 @@
-import data.Lab;
-import data.Mentor;
-import data.Student;
+package workspace;
+
+import data.lab.Lab;
+import data.lab.Mentor;
+import data.lab.Student;
 
 import java.util.*;
 import java.util.stream.Collectors;

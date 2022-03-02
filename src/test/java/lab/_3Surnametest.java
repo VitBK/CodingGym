@@ -1,4 +1,7 @@
+package lab;
+
 import org.junit.jupiter.api.Test;
+import workspace.Main;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

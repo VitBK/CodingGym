@@ -1,4 +1,4 @@
-package data;
+package data.lab;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

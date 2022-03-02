@@ -1,4 +1,4 @@
-package data;
+package data.lab;
 
 public class Mentor {
     private int id;

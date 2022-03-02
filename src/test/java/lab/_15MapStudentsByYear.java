@@ -1,6 +1,9 @@
-import data.Lab;
-import data.Student;
+package lab;
+
+import data.lab.Lab;
+import data.lab.Student;
 import org.junit.jupiter.api.Test;
+import workspace.Main;
 
 import java.util.List;
 import java.util.Map;

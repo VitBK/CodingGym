@@ -1,3 +1,5 @@
+package workspace;
+
 import java.util.Objects;
 
 public class Animal {
@@ -25,7 +27,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
+        return "workspace.Animal{" +
                 "name='" + name + '\'' +
                 ", color='" + color + '\'' +
                 ", type='" + type + '\'' +
