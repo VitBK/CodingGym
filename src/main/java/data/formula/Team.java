@@ -15,5 +15,6 @@ public class Team {
 
     private String teamName;
     private List<Driver> drivers;
-    private int budget;
+    private long budget;
+    private Engine engine;
 }
