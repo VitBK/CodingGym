@@ -4,8 +4,11 @@ import data.formula.Championship;
 import data.formula.Driver;
 import data.formula.Engine;
 import data.formula.Team;
+import data.formula.Track;
 import lombok.experimental.UtilityClass;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @UtilityClass
@@ -52,9 +55,34 @@ public class ObjectGenerator {
         var sch = createDriver(47, "Mick Schumacher", "CAN", 22, 0, 1_000_000);
         var haas = createTeam("HAAS FERRARI", List.of(maz, sch), 90_000_000, Engine.FERRARI);
 
+        var tracks = new ArrayList<Track>(21);
+        tracks.add(new Track("Bahrain Grand Prix", ham, LocalDate.of(2021, 3, 28)));
+        tracks.add(new Track("Emilia Romagna Grand Prix", ver, LocalDate.of(2021, 4, 18)));
+        tracks.add(new Track("Portuguese Grand Prix", ham, LocalDate.of(2021, 5, 2)));
+        tracks.add(new Track("Spanish Grand Prix", ham, LocalDate.of(2021, 5, 9)));
+        tracks.add(new Track("Monaco Grand Prix", ver, LocalDate.of(2021, 5, 23)));
+        tracks.add(new Track("Azerbaijan Grand Prix", per, LocalDate.of(2021, 6, 6)));
+        tracks.add(new Track("French Grand Prix", ver, LocalDate.of(2021, 6, 20)));
+        tracks.add(new Track("Styrian Grand Prix", ver, LocalDate.of(2021, 6, 27)));
+        tracks.add(new Track("Austrian Grand Prix", ver, LocalDate.of(2021, 7, 4)));
+        tracks.add(new Track("British Grand Prix", ham, LocalDate.of(2021, 7, 18)));
+        tracks.add(new Track("Hungarian Grand Prix", okn, LocalDate.of(2021, 8, 1)));
+        tracks.add(new Track("Belgian Grand Prix", ver, LocalDate.of(2021, 8, 29)));
+        tracks.add(new Track("Dutch Grand Prix", ver, LocalDate.of(2021, 9, 5)));
+        tracks.add(new Track("Italian Grand Prix", ric, LocalDate.of(2021, 9, 12)));
+        tracks.add(new Track("Russian Grand Prix", ham, LocalDate.of(2021, 9, 26)));
+        tracks.add(new Track("Turkish Grand Prix", bot, LocalDate.of(2021, 10, 10)));
+        tracks.add(new Track("United States Grand Prix", ver, LocalDate.of(2021, 10, 24)));
+        tracks.add(new Track("Mexico City Grand Prix", ver, LocalDate.of(2021, 11, 7)));
+        tracks.add(new Track("São Paulo Grand Prix", ham, LocalDate.of(2021, 11, 14)));
+        tracks.add(new Track("Qatar Grand Prix", ham, LocalDate.of(2021, 11, 21)));
+        tracks.add(new Track("Saudi Arabian Grand Prix", ham, LocalDate.of(2021, 12, 5)));
+        tracks.add(new Track("Abu Dhabi Grand Prix", ver, LocalDate.of(2021, 12, 12)));
+
         return Championship.builder()
                 .teams(List.of(redBull, mercedes, ferrari, mclaren, alpine, alphaTauri,
                         astonMartin, williams, alfaRomeo, haas))
+                .tracks(tracks)
                 .build();
     }
 
