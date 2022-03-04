@@ -1,4 +1,4 @@
-package workspace;
+package workspace.previous;
 
 import data.lab.Lab;
 import data.lab.Mentor;
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class Main {
+public class Done {
     public static void main(String[] args) {
 //        printDigits();
 //        printNames();

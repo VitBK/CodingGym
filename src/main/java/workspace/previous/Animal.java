@@ -1,4 +1,4 @@
-package workspace;
+package workspace.previous;
 
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "workspace.Animal{" +
+        return "workspace.previous.Animal{" +
                 "name='" + name + '\'' +
                 ", color='" + color + '\'' +
                 ", type='" + type + '\'' +

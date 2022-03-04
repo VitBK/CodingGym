@@ -1,4 +1,4 @@
-package workspace;
+package workspace.previous;
 
 import data.lab.Lab;
 import data.lab.Mentor;

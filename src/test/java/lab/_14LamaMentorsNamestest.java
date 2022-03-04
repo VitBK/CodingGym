@@ -1,7 +1,7 @@
 package lab;
 
 import org.junit.jupiter.api.Test;
-import workspace.Main;
+import workspace.previous.Main;
 
 import java.util.ArrayList;
 import java.util.List;

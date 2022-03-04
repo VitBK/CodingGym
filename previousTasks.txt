@@ -24,7 +24,7 @@
     //Есть список animals с полями: name, color, type
     //Сохранить в список всех собак (dog)
     //Поля могут содержать null значения!!!
-        List<workspace.Animal> animals = createAnimals();
+        List<workspace.previous.Animal> animals = createAnimals();
 
 
 //    6

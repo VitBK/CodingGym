@@ -1,8 +1,8 @@
 package lab;
 
 import org.junit.jupiter.api.Test;
-import workspace.Animal;
-import workspace.Main;
+import workspace.previous.Animal;
+import workspace.previous.Main;
 
 import java.util.ArrayList;
 import java.util.List;

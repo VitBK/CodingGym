@@ -1,7 +1,7 @@
 package lab;
 
 import org.junit.jupiter.api.Test;
-import workspace.Main;
+import workspace.previous.Main;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

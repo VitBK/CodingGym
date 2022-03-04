@@ -2,7 +2,7 @@ package lab;
 
 import data.lab.Student;
 import org.junit.jupiter.api.Test;
-import workspace.Main;
+import workspace.previous.Main;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

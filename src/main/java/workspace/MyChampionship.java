@@ -10,7 +10,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.TreeMap;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -18,10 +17,12 @@ import java.util.stream.Stream;
 public class MyChampionship {
 
     public static void main(String[] args) {
+        var championship = ObjectGenerator.generateChampionship();
 
+        System.out.println(getConstructorChampionshipResults(championship));
     }
 
-    public static void printNames(String names) {
+    private static void printNames(String names) {
         // приходит строка имен, разделенных запятой
         // пропустить первое имя, остальные вывести в консоль
         Stream.of(names.split(", "))
@@ -29,7 +30,7 @@ public class MyChampionship {
                 .forEach(System.out::println);
     }
 
-    public static void generateRandomNumbers() {
+    private static void generateRandomNumbers() {
         // создать поток бесконечно генерируемых случайных чисел
         // ограничить его 10 элементами
         // вывести их в консоль
@@ -39,7 +40,7 @@ public class MyChampionship {
                 .forEach(System.out::println);
     }
 
-    public static void printNumbers() {
+    private static void printNumbers() {
         // создать поток чисел от 0 до 20
         // вывести их в консоль
         // найти среднее арифметическое
@@ -49,7 +50,7 @@ public class MyChampionship {
                 .ifPresentOrElse(System.out::println, () -> System.out.println("Computations went wrong :("));
     }
 
-    public static void printUniqueOddNumbers(int[] numbers) {
+    private static void printUniqueOddNumbers(int[] numbers) {
         // вывести нечетные числа в консоль
         // отсортировав их по возрастанию
         Arrays.stream(numbers)
@@ -58,7 +59,7 @@ public class MyChampionship {
                 .forEach(System.out::println);
     }
 
-    public static void printUniquePalindroms(String[] arr1, String[] arr2) {
+    private static void printUniquePalindroms(String[] arr1, String[] arr2) {
         // найти палиндромы в двух массивах, вывести их в консоль
         // повторяющиеся значения не выводить
         // палиндром - слово, которое одинаково читается в обоих направлениях
@@ -73,7 +74,7 @@ public class MyChampionship {
 //                .forEach(System.out::println);
     }
 
-    public static String getDriversChampionshipResults(Championship championship) {
+    private static String getDriversChampionshipResults(Championship championship) {
         // вернуть результаты личного зачета (список гонщиков, отсортированный по очкам)
         // вывести в строку вида: "имя гонщика : кол-во очков"
         return championship.getTeams().stream()
@@ -83,8 +84,8 @@ public class MyChampionship {
                 .collect(Collectors.joining("\n"));
     }
 
-    public static List<Team> getConstructorChampionshipResults(Championship championship) {
-        // вернуть результаты кубка конструкторов (отсортировать команды по количеству набранных очков)
+    private static List<Team> getConstructorChampionshipResults(Championship championship) {
+        // отсортировать команды по количеству набранных очков
         return championship.getTeams().stream()
                 .sorted(Comparator.comparing(team -> team.getDrivers().stream()
                         .mapToInt(Driver::getPoints)
@@ -92,7 +93,12 @@ public class MyChampionship {
                 .collect(Collectors.toList());
     }
 
-    public static long getMaxSalaryDriver(Championship championship) {
+    private static String findAnyDriverFromCountry(String country) {
+        // найти хотя бы одного гонщика из заданной страны, в противном случае кинуть исключение
+        return null;
+    }
+
+    private static long getMaxSalaryDriver(Championship championship) {
         // вернуть самую большую зарплату гонщика
         return championship.getTeams().stream()
                 .flatMap(team -> team.getDrivers().stream())
@@ -101,7 +107,7 @@ public class MyChampionship {
                 .orElse(0);
     }
 
-    public static Map<String, Long> filterDriversWithSmallSalary(Championship championship) {
+    private static Map<String, Long> filterDriversWithSmallSalary(Championship championship) {
         // оставить только гонщиков с зарплатой ниже 2м
         // собрать в мапу имя-зарплата
         // * вариант с treeMap
@@ -112,7 +118,12 @@ public class MyChampionship {
 //                .collect(Collectors.toMap(Driver::getName, Driver::getSalary, Long::sum, TreeMap::new));
     }
 
-    public static String findMostWinsDriver(Championship championship) {
+    private static Team findAnyTeamWithEqualSalaries(Championship championship) {
+        // найти любую команду в которой гонщики получают одинаковую зарплату
+        return null;
+    }
+
+    private static String findMostWinsDriver(Championship championship) {
         // найти гонщика с наибольшим числом побед
         // вывести строку "[имя_гонщика] won [количество побед] times"
         // в случае неудачи бросить исключение
@@ -125,7 +136,7 @@ public class MyChampionship {
                 .orElseThrow(() -> new RuntimeException("Sorry you not a winner"));
     }
 
-    public static Map<Boolean, List<Driver>> findWinnerAndLosers(Championship championship) {
+    private static Map<Boolean, List<Driver>> findWinnerAndLosers(Championship championship) {
         // разделить гонщиков на тех кто побеждал хотя бы один раз и остальных
         var winners = championship.getTracks().stream()
                 .map(Track::getWinner)
@@ -136,7 +147,7 @@ public class MyChampionship {
                 .collect(Collectors.partitioningBy(winners::contains));
     }
 
-    public static String getFibonacciSequence() {
+    private static String getFibonacciSequence() {
         // вернуть последовательность чисел фибоначчи через запятую, ограничиться 10 числами
         // оригинал задачи https://mkyong.com/java/java-fibonacci-examples/
         return Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1], t[0] + t[1]})

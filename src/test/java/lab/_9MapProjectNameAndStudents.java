@@ -3,7 +3,7 @@ package lab;
 import data.lab.Lab;
 import data.lab.Student;
 import org.junit.jupiter.api.Test;
-import workspace.Main;
+import workspace.previous.Main;
 
 import java.util.List;
 import java.util.Map;
